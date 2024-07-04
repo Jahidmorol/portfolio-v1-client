@@ -6,7 +6,6 @@ import {
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
-import profile from "../assets/okay.jpg";
 import { SiMongodb, SiNextdotjs } from "react-icons/si";
 
 const About = () => {
@@ -18,12 +17,19 @@ const About = () => {
       <div className="pt-28">
         <div className="max-w-screen-lg mx-auto">
           <div className="flex flex-col lg:flex-row p-8 justify-center items-center gap-8 w-full pb-16">
-            <div className="lg:w-2/4 h-full">
+            {/* <div className="lg:w-2/4 h-full">
               <img className="h-full rounded-lg" src={profile} alt="" />
+            </div> */}
+            <div className="h-full lg:h-[28rem] lg:w-[28rem]">
+              <img
+                src="https://i.ibb.co/CtjVFXW/jahid-prof.jpg"
+                alt="Gif"
+                className="h-full rounded-lg"
+              />
             </div>
             <div className="flex flex-col items-start lg:w-2/4 mt-6 lg:mt-0">
               <h2 className="lg:text-4xl text-3xl text-[#0CB0D8] font-bold ">
-                Mehedi Hasan Foysal
+                Jahid Hasan Zarif
               </h2>
               <p className=" text-sm">Web Developer</p>
               <div className="text-center lg:text-left w-full my-4">
@@ -45,8 +51,8 @@ const About = () => {
                   Contact Information
                 </h2>
                 <div className="text-gray-300">
-                  Email : mehedihasanfoysal22@gmail.com <br /> Phone : +88
-                  01719064743 <br /> Address : Dhaka, Bangladesh
+                  Email : jahidmorol2@gmail.com <br /> Phone : +88 01719064743{" "}
+                  <br /> Address : Dhaka, Bangladesh
                 </div>
               </div>
               <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 justify-between pr-0 lg:pr-36 mt-3">
