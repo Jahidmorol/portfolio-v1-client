@@ -1,5 +1,4 @@
 import { FaArrowRight } from "react-icons/fa";
-import image from "../assets/okay.jpg";
 import { Link } from "react-scroll";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -86,12 +85,12 @@ const Hero = () => {
         <div
           data-aos="zoom-in"
           data-aos-duration="2000"
-          className="w-[22rem] lg:w-[28rem] "
+          className="w-[22rem] lg:h-[28rem] lg:w-[28rem]"
         >
           <img
-            src={image}
+            src="https://i.ibb.co/CtjVFXW/jahid-prof.jpg"
             alt="Gif"
-            className=" rounded-2xl mx-auto  md:w-full md:pb-0"
+            className="rounded-2xl mx-auto md:w-full h-full object-cover md:pb-0"
           />
         </div>
       </div>

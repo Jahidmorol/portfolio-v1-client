@@ -24,11 +24,11 @@ const BlogDetails = () => {
             <div className="flex items-center mt-6">
               <img
                 className="object-cover object-center w-10 h-10 rounded-full"
-                src="https://res.cloudinary.com/djo4onkzl/image/upload/v1712214195/qc2jldu94gngfotmugzi.jpg"
+                src="https://i.ibb.co/CtjVFXW/jahid-prof.jpg"
                 alt="image"
               />
               <div className="mx-4">
-                <h1 className="text-sm text-white">Mehedi Hasan Foysal</h1>
+                <h1 className="text-sm text-white">Jahid Hasan Zarif</h1>
                 <p className="text-sm text-white">Author</p>
               </div>
             </div>

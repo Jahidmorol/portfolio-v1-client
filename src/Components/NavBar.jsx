@@ -9,7 +9,7 @@ const NavBar = () => {
     <div className="flex justify-between px-4 bg-black text-white w-full items-center h-20 fixed z-10 ">
       <div className="text-4xl font-signeture cursor-pointer ">
         <Link to="/main#home">
-          <span className=" text-[#0CB0D8] hover:text-white">F</span>oysal
+          <span className=" text-[#0CB0D8] hover:text-white">J</span>ahid
         </Link>
       </div>
 

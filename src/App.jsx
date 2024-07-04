@@ -8,11 +8,11 @@ import Protfolio from "./Components/Protfolio";
 import SocialLink from "./Components/SocialLink";
 import Footer from "./Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./LayOut/Main";
 import ProjectDetails from "./Components/ProjectDetails";
-import Blog from "./Components/Blog";
 import Services from "./Components/Services";
 import BlogDetails from "./Components/BlogDetails";
+import Main from "./Layout/Main";
+import Blog from "./Components/Blog";
 
 function App() {
   return (

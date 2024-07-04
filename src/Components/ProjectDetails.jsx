@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
 import "./ProjectDetails.css";
 import { useParams } from "react-router-dom";
+import { useGetProjectQuery } from "../redux/api/apis";
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const [singleProjects, setSingleProjects] = useState();
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/projects/${id}`)
-      .then((res) => res.json())
-      .then((data) => setSingleProjects(data?.data));
-  }, [id]);
+  const { data, isFetching } = useGetProjectQuery(id);
+
+  if (isFetching) {
+    return <p>Loading...</p>;
+  }
+
+  const singleProjects = data?.data;
   const sentences = singleProjects?.description
     .split(".")
     .map((sentence) => sentence.trim())
     .filter((sentence) => sentence.length > 0);
-  console.log(singleProjects);
+
   return (
     <div
       id="projectditails"
