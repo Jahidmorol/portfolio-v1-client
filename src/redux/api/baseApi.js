@@ -9,6 +9,6 @@ export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: baseQuery,
   tagTypes: ["blogs", "projects", "profile"],
-  // refetchOnMountOrArgChange: 30,
+  refetchOnMountOrArgChange: 30,
   endpoints: () => ({}),
 });

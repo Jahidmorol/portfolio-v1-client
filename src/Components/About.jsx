@@ -51,7 +51,7 @@ const About = () => {
                   Contact Information
                 </h2>
                 <div className="text-gray-300">
-                  Email : jahidmorol2@gmail.com <br /> Phone : +88 01719064743{" "}
+                  Email : jahidmorol2@gmail.com <br /> Phone : +88 01873817685{" "}
                   <br /> Address : Dhaka, Bangladesh
                 </div>
               </div>
@@ -62,7 +62,7 @@ const About = () => {
                   </h5>
                   <div className="flex gap-3">
                     <a
-                      href="https://github.com/mehedihasan8"
+                      href="https://github.com/jahidmorol"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -71,7 +71,7 @@ const About = () => {
                       </div>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/mehedihasanfoysal8/"
+                      href="https://www.linkedin.com/in/jahidmorol"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -80,7 +80,7 @@ const About = () => {
                       </div>
                     </a>
                     <a
-                      href="https://www.facebook.com/mehedihasanfoysal8/"
+                      href="https://www.facebook.com/jahidmorol2"
                       target="_blank"
                       rel="noreferrer"
                     >
