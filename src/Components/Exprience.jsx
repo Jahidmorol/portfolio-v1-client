@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/no-unescaped-entities */
 import { PiBriefcaseDuotone } from "react-icons/pi";
 import { MdCastForEducation } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
+import { useGetExperienceQuery, useGetSkillsQuery } from "../redux/api/apis";
 
 const Exprience = () => {
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/skill")
-      .then((res) => res.json())
-      .then((data) => setSkills(data?.data));
-  }, []);
-
+  const { data } = useGetSkillsQuery(undefined);
+  const { data: experienceData } = useGetExperienceQuery(undefined);
   return (
     <div>
       <div
@@ -34,7 +29,7 @@ const Exprience = () => {
               >
                 Front-End Skill
               </h1>
-              {skills?.getFrontendSkill?.map((skill, i) => (
+              {data?.data?.getFrontendSkill?.map((skill, i) => (
                 <div
                   data-aos="zoom-in"
                   data-aos-easing="ease-in-out"
@@ -63,7 +58,7 @@ const Exprience = () => {
                 Back-End Skill
               </h1>
 
-              {skills?.getBackendSkill?.map((skill, i) => (
+              {data?.data?.getBackendSkill?.map((skill, i) => (
                 <div
                   data-aos="zoom-in"
                   data-aos-easing="ease-in-out"
@@ -100,7 +95,6 @@ const Exprience = () => {
           <div className="flex items-center justify-between pt-2">
             <h3 className="font-bold text-lg">Experience & Education!</h3>
             <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
               <button>
                 <RxCross2 size={26} />
               </button>
@@ -108,18 +102,20 @@ const Exprience = () => {
           </div>
           <div className="flex justify-center flex-col md:flex-row gap-6 mt-6">
             <div className="w-full md:w-[40%]">
-              <div className="flex gap-4">
-                <PiBriefcaseDuotone className="mt-1" size={26} />
-                <div>
-                  <h1>2024 - Present</h1>
-                  <p className="text-lg font-semibold mt-2">
-                    Web Application Developer - CodeCareBD
-                  </p>
-                  <p className="text-[17px] font-medium mt-2">
-                    Work as a Front-End Developer at CodeCareBD
-                  </p>
+              {experienceData?.data?.map((experience, i) => (
+                <div key={i} className="flex gap-4">
+                  <PiBriefcaseDuotone className="mt-1" size={26} />
+                  <div>
+                    <h1>2024 - Present</h1>
+                    <p className="text-lg font-semibold mt-2">
+                      Web Application Developer - {experience?.name}
+                    </p>
+                    <p className="text-[17px] font-medium mt-2">
+                      Work as a {experience?.position} at {experience?.name}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
             <div className="w-full md:w-[60%]">
               <div className="flex gap-4">

@@ -16,10 +16,10 @@ const Contacte = () => {
         "XrhvaKbA7J9V0BGwT"
       )
       .then(
-        (result) => {
+        () => {
           // console.log(result.text, "and Message sent");
         },
-        (error) => {
+        () => {
           // console.log(error.text);
         }
       );

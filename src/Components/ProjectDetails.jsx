@@ -31,26 +31,26 @@ const ProjectDetails = () => {
         <div className="w-full lg:w-1/2 flex flex-col  justify-center">
           <div>
             <div className="flex justify-evenly items-center">
-              <h2 className="font-semibold text-base  text-secondary">
+              <h2 className="font-semibold text-base">
                 {singleProjects?.title}
               </h2>
               <h1 className="font-bold text-2xl  text-[#0097e6] ">
                 {singleProjects?.team}
               </h1>
             </div>
-            <h2 className="project-title text-accent font-semibold text-xl my-4">
+            <h2 className="project-title  font-semibold text-xl my-4">
               {singleProjects?.name}
             </h2>
             <div className="my-4">
-              <h3 className=" text-secondary">Project Overview</h3>
+              <h3 className="">Project Overview</h3>
               {sentences?.map((point, index) => (
-                <p key={index} className="text-accent">
+                <p key={index} className="">
                   {index + 1}. {point}
                 </p>
               ))}
             </div>
             <div className="my-5">
-              <h3 className=" text-secondary">Technology used</h3>
+              <h3>Technology used</h3>
               <div className="flex flex-wrap gap-2">
                 {singleProjects?.tech?.map((point, index) => (
                   <button

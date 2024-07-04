@@ -4,18 +4,16 @@
 import "./Protfoliol.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useGetProjectsQuery } from "../redux/api/apis";
 
 const Protfolio = () => {
-  const [projects, setProjects] = useState([]);
+  const { data } = useGetProjectsQuery(undefined);
+
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
-      .then((res) => res.json())
-      .then((data) => setProjects(data?.data));
     AOS.init({ duration: 1000 });
   }, []);
-  console.log(projects);
   // const portfolios = [
   //   {
   //     id: 1,
@@ -58,7 +56,7 @@ const Protfolio = () => {
           data-aos-duration="1500"
           className="portfolio-car grid sm:grid-cols-2 md:grid-cols-3 gap-7 px-4 sm:px-0 md:mt-3"
         >
-          {projects.map((project) => (
+          {data?.data?.map((project) => (
             <div
               data-aos={scroll}
               data-aos-easing="linear"

@@ -30,7 +30,7 @@ const SocialLink = () => {
           Mail <HiOutlineMail size={30} />
         </>
       ),
-      href: "mailto:mehedihasanfoysal8@gmail.com",
+      href: "mailto:mehedihasanfoysal22@gmail.com",
     },
     {
       id: 4,
