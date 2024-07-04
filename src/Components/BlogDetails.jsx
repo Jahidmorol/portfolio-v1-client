@@ -1,70 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useGetBlogQuery, useGetBlogsQuery } from "../redux/api/apis";
 
 const BlogDetails = () => {
-  const allBlogs = [
-    {
-      _id: "1",
-      title: "Introduction to React",
-      imageUrl: "https://i.ibb.co/M59mJ2x/cat1.jpg",
-      details:
-        "<p>React is a JavaScript library for building user interfaces lorem1 asdfjka kajfkd kfhoijf9fkj oiflkfhf ioasjfa fikfhjkdf idfujdf fadhfoihf 8dfhadnf kjfhf afoks adfajfjkfkfjfoifoisjdfj jkfakf dkfsdf iuadjff dfjdfad sfidfdif adfhi iuihjknghiasdf </p>",
-    },
-    {
-      _id: "2",
-      title: "Introduction to Another",
-      imageUrl: "https://i.ibb.co/M59mJ2x/cat1.jpg",
-      details:
-        "<p>React is a JavaScript library for building user interfaces lorem1 asdfjka kajfkd kfhoijf9fkj oiflkfhf ioasjfa fikfhjkdf idfujdf fadhfoihf 8dfhadnf kjfhf afoks adfajfjkfkfjfoifoisjdfj jkfakf dkfsdf iuadjff dfjdfad sfidfdif adfhi iuihjknghiasdf </p>",
-    },
-  ];
-  const singleBlog = {
-    _id: "1",
-    title: "Introduction to React",
-    imageUrl: "https://i.ibb.co/M59mJ2x/cat1.jpg",
-    details:
-      "<p>React is a JavaScript library for building user interfaces lorem1 asdfjka kajfkd kfhoijf9fkj oiflkfhf ioasjfa fikfhjkdf idfujdf fadhfoihf 8dfhadnf kjfhf afoks adfajfjkfkfjfoifoisjdfj jkfakf dkfsdf iuadjff dfjdfad sfidfdif adfhi iuihjknghiasdf </p>",
-    userImage: "https://i.ibb.co/dKZBwws/IMG-20230913-113345.jpg",
-    userName: "Jahid Morol",
-  };
-
-  const isLoading = false;
+  const { id } = useParams();
+  const { data, isLoading } = useGetBlogQuery(id);
+  const { data: allBlogs } = useGetBlogsQuery(undefined);
 
   return (
-    <div className="flexcode-container !pt-16 md:!pt-10">
+    <div className="max-w-screen-lg mx-auto pt-24">
       <div className="lg:flex">
         {/* Single Blog details side */}
         <div className="lg:w-[70%] lg:px-10 bg-secondary-color md:py-10 md:px-6 rounded-xl">
           <img
             className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl"
-            src={singleBlog?.imageUrl}
+            src={data?.data?.image}
             alt="Blog Image"
           />
           <div className="p-3 md:p-0">
             <p className="md:mt-6 text-sm text-white uppercase">Want to know</p>
             <h1 className="mt-2 md:mt-4 text-lg md:text-2xl font-semibold leading-tight primary-color">
-              {singleBlog?.title}
+              {data?.data?.title}
             </h1>
             <div className="flex items-center mt-6">
               <img
                 className="object-cover object-center w-10 h-10 rounded-full"
-                src={"https://i.ibb.co/dKZBwws/IMG-20230913-113345.jpg"}
+                src="https://res.cloudinary.com/djo4onkzl/image/upload/v1712214195/qc2jldu94gngfotmugzi.jpg"
                 alt="image"
               />
               <div className="mx-4">
-                <h1 className="text-sm text-white">Jahid Morol</h1>
+                <h1 className="text-sm text-white">Mehedi Hasan Foysal</h1>
                 <p className="text-sm text-white">Author</p>
               </div>
             </div>
             <p
               className=" text-white mt-5 text-justify mb-5"
-              dangerouslySetInnerHTML={{ __html: singleBlog?.details }}
+              dangerouslySetInnerHTML={{ __html: data?.data?.content }}
             />
           </div>
         </div>
 
         {/* List of Blog Side side */}
         <div className="mt-8 lg:w-[30%] lg:mt-0 lg:px-6">
-          <h2 className="text-2xl font-semibold pb-5">Recent Blogs</h2>
+          <h2 className="text-2xl font-semibold pb-5 pt-6">Recent Blogs</h2>
 
           {isLoading ? (
             <>
@@ -84,7 +61,7 @@ const BlogDetails = () => {
               </div>
             </>
           ) : (
-            allBlogs?.slice(0, 5).map((blog) => (
+            allBlogs?.data?.slice(0, 5).map((blog) => (
               <div key={blog._id}>
                 <Link to={`/blogs/${blog._id}`}>
                   <h2 className="block mt-2 font-medium text-white hover:underline hover:text-[#0fcda1]">
@@ -95,9 +72,9 @@ const BlogDetails = () => {
                   className="text-sm text-slate-300 mb-5"
                   dangerouslySetInnerHTML={{
                     __html:
-                      blog.details.length > 50
-                        ? blog.details.slice(0, 50) + "..."
-                        : blog.details,
+                      blog.content.length > 50
+                        ? blog.content.slice(0, 50) + "..."
+                        : blog.content,
                   }}
                 />
                 <hr className="my-6 border border-[#0fcda18c]" />

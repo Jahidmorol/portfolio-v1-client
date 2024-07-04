@@ -2,16 +2,16 @@ import "./App.css";
 import About from "./Components/About";
 import Contacte from "./Components/Contacte";
 import Exprience from "./Components/Exprience";
+import Hero from "./Components/Hero";
 import NavBar from "./Components/NavBar";
 import Protfolio from "./Components/Protfolio";
 import SocialLink from "./Components/SocialLink";
 import Footer from "./Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Main from "./LayOut/Main";
 import ProjectDetails from "./Components/ProjectDetails";
 import Blog from "./Components/Blog";
 import Services from "./Components/Services";
-import Main from "./Layout/Main";
-import Hero from "./Components/Hero";
 import BlogDetails from "./Components/BlogDetails";
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
           <Route path="/main#contact" element={<Contacte />} />
           <Route path="/about-me" element={<About />} />
           <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/:id" element={<BlogDetails />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/blogs/:id" element={<BlogDetails />} />
         </Routes>
         <Footer />
         <SocialLink />

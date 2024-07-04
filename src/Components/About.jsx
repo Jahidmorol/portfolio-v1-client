@@ -1,13 +1,13 @@
 import {
-  FaCss3,
   FaFacebook,
   FaGithub,
   FaJsSquare,
   FaLinkedinIn,
+  FaNodeJs,
   FaReact,
 } from "react-icons/fa";
 import profile from "../assets/okay.jpg";
-import { SiTailwindcss } from "react-icons/si";
+import { SiMongodb, SiNextdotjs } from "react-icons/si";
 
 const About = () => {
   return (
@@ -45,11 +45,11 @@ const About = () => {
                   Contact Information
                 </h2>
                 <div className="text-gray-300">
-                  Email : mehedihasanfoysal22@gmail.com <br /> Phone :
-                  +8801719064743 <br /> Address : Dhaka, Bangladesh
+                  Email : mehedihasanfoysal22@gmail.com <br /> Phone : +88
+                  01719064743 <br /> Address : Dhaka, Bangladesh
                 </div>
               </div>
-              <div className="text-accent flex flex-col lg:flex-row gap-10 lg:gap-10 justify-between pr-0 lg:pr-36 mt-3">
+              <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 justify-between pr-0 lg:pr-36 mt-3">
                 <div>
                   <h5 className="text-left mb-3 uppercase tracking-wide">
                     Find Me
@@ -74,7 +74,7 @@ const About = () => {
                       </div>
                     </a>
                     <a
-                      href="https://www.facebook.com/profile.php?id=100011259456572"
+                      href="https://www.facebook.com/mehedihasanfoysal8/"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -98,22 +98,29 @@ const About = () => {
                     </div>
 
                     <div
+                      className="shadow-2xl bg-black text-white p-2 rounded-md
+                    hover:bg-white hover:text-black"
+                    >
+                      <SiNextdotjs fontSize={20} />
+                    </div>
+                    <div
                       className="shadow-2xl bg-black text-yellow-500 p-2 rounded-md
                     hover:bg-white hover:text-black"
                     >
                       <FaJsSquare fontSize={20} />
                     </div>
+
                     <div
-                      className="shadow-2xl bg-black text-blue-500 p-2 rounded-md
-                    hover:bg-white hover:text-blue-500"
+                      className="shadow-2xl bg-black text-green-500 p-2 rounded-md
+                    hover:bg-white hover:text-green-500"
                     >
-                      <FaCss3 fontSize={20} />
+                      <FaNodeJs fontSize={20} />
                     </div>
                     <div
                       className="shadow-2xl bg-black text-blue-500 p-2 rounded-md
                     hover:bg-white hover:text-blue-500"
                     >
-                      <SiTailwindcss fontSize={20} />
+                      <SiMongodb fontSize={20} />
                     </div>
                   </div>
                 </div>

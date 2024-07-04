@@ -25,9 +25,9 @@ const Hero = () => {
       <div className="pt-10 lg:pt-20 max-w-screen-lg mx-auto flex flex-col justify-center items-center md:flex-row">
         <div className="flex flex-col justify-center flex-grow lg:mt-4 mb-0 md:mb-[14px]">
           <p className="uppercase font-bold mt-7 md:mt-0 pt-8 md:pt-0  text-center lg:text-left text-3xl lg:text-[35px] text-white leading-snug">
-            Hi, I'm{" "}
+            Hi, I am{" "}
             <span className="text-[#0CB0D8] font-extrabold">
-              Mehedi Hasan Foysal
+              Jahid Hasan Zarif
             </span>
           </p>
           <p
@@ -43,7 +43,7 @@ const Hero = () => {
             data-aos-duration="1000"
             className="text-gray-400 hover:text-white text-center md:text-left max-w-lg px-4 md:px-0"
           >
-            Hi there, I am Mehedi Hasan Foysal. A junior web developer and
+            Hi there, I am Jahid Hasan Zarif. A junior web developer and
             Programmer. I love to explore new things. I am willing to accept
             challenges to improve myself more and more. Currently I love to work
             on web applications using technologies like React, Tailwind css etc.
