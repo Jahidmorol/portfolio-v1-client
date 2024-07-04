@@ -1,0 +1,19 @@
+.image-content {
+  width: 100%;
+  margin: auto;
+  cursor: n-resize;
+}
+.image-content img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: top;
+  height: 250px;
+  transition: 4s all ease;
+}
+.image-content:hover img {
+  object-position: bottom;
+  border-radius: 20px;
+}
+.portfolio-car {
+}
